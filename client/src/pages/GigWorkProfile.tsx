@@ -18,7 +18,7 @@ export default function GigWorkerProfile() {
   const {id} = useParams();
   const [isEditing, setIsEditing] = useState(false);
   const [workerData, setWorkerData] = useState({
-    name: "Jatin",
+    name: "Jatin(Guide Profile) ",
     title: "Full Stack Developer",
     location: "New York, NY",
     email: "jatin@email.com",

@@ -1,12 +1,33 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { ArrowRight, CheckCircle, MessageCircle, Shield, Star, Users, Map, Camera, Tent, TreePalm, LucideTreePine } from "lucide-react"
+import { ArrowRight, CheckCircle, MessageCircle, Shield, Star, Users, Map, Camera, Tent, TreePalm, LucideTreePine, Quote  } from "lucide-react"
 import { Link } from "react-router-dom"
 import img1 from '../assets/img1.png'
 import doImage from '../assets/test.webp'
 import img2 from '../assets/mainny.png'
 
 export default function LandingPage1() {
+  const testimonials = [
+    {
+      text: "RuralConnect helped me discover amazing local craftsmen in my area. The cultural workshops were life-changing!",
+      author: "Sarah Mitchell",
+      role: "Travel Enthusiast",
+      location: "Colorado"
+    },
+    {
+      text: "As a local guide, this platform has helped me share my community's rich heritage with respectful travelers.",
+      author: "James Thompson",
+      role: "Local Guide",
+      location: "Vermont"
+    },
+    {
+      text: "The eco-friendly stays perfectly balanced comfort with environmental consciousness. A truly authentic experience!",
+      author: "Emma Rodriguez",
+      role: "Environmental Blogger",
+      location: "Montana"
+    }
+  ]
+
   return (
     <div className="flex flex-col min-h-screen">
       <header className="sticky top-0 z-50 w-full border-b bg-green-100/95 backdrop-blur supports-[backdrop-filter]:bg-green-100/60">
@@ -133,6 +154,26 @@ export default function LandingPage1() {
                   Share experiences and get tips from fellow rural tourism enthusiasts.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-green-50">
+          <div className="container px-4 md:px-6">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-green-800">
+              What Our Community Says
+            </h2>
+            <div className="grid gap-8 md:grid-cols-3">
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="flex flex-col space-y-4 bg-white p-6 rounded-xl shadow-sm border border-green-100">
+                  <Quote className="h-8 w-8 text-green-600" />
+                  <p className="text-green-700 flex-1">"{testimonial.text}"</p>
+                  <div className="border-t border-green-100 pt-4">
+                    <p className="font-bold text-green-800">{testimonial.author}</p>
+                    <p className="text-sm text-green-600">{testimonial.role}</p>
+                    <p className="text-sm text-green-600">{testimonial.location}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

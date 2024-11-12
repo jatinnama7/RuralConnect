@@ -56,7 +56,7 @@ export default function JobCreate() {
       const response = await axios.post("http://localhost:7000/api/client/dashboard/client/create", jobData);
   
 
-      alert('Job created successfully!');
+      alert('Tour Booked successfully!');
       console.log(response.data); // Log response for debugging
       naviagator(`/dashboard/client/${id}`)
 
@@ -70,47 +70,47 @@ export default function JobCreate() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 p-6 text-black">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 p-6 text-black">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Create a New Job</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-8">Book a tour</h1>
         
         <Card>
           <CardHeader>
-            <CardTitle>Job Details</CardTitle>
+            <CardTitle>Tour Details</CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6 rounded-xl">
               <div className="space-y-2 rounded-xl">
-                <Label htmlFor="title">Job Title</Label>
-                <Input id="title" placeholder="e.g. Senior React Developer" value={jobTitle} onChange={(e) => setJobTitle(e.target.value)} required />
+                <Label htmlFor="title">Meetup Point</Label>
+                <Input id="title" placeholder="e.g. Jaipur" value={jobTitle} onChange={(e) => setJobTitle(e.target.value)} required />
               </div>
               
               <div className="space-y-2 rounded-xl">
-                <Label htmlFor="company">Company Name</Label>
-                <Input id="company" placeholder="e.g. TechCorp" value={companyName} onChange={(e) => setCompanyName(e.target.value)} required />
+                <Label htmlFor="company">Date of Visit</Label>
+                <Input id="company" placeholder="DD-MM-YYYY" value={companyName} onChange={(e) => setCompanyName(e.target.value)} required />
               </div>
               
               <div className="space-y-2 rounded-xl">
-                <Label htmlFor="location">Location</Label>
-                <Input id="location" placeholder="e.g. Remote, New York, NY" value={location} onChange={(e) => setLocation(e.target.value)} required />
+                <Label htmlFor="location">Age</Label>
+                <Input id="location" placeholder="e.g.18 - 60" value={location} onChange={(e) => setLocation(e.target.value)} required />
               </div>
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="salary">Salary Range</Label>
+                  <Label htmlFor="salary">Budget</Label>
                   <Input id="salary" placeholder="e.g. $100k - $150k" value={salaryRange} onChange={(e) => setSalaryRange(e.target.value)} required />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="type">Job Type</Label>
+                  <Label htmlFor="type">Tour Type</Label>
                   <Select onValueChange={setJobType}>
                     <SelectTrigger id="type">
-                      <SelectValue placeholder="Select job type" />
+                      <SelectValue placeholder="Select tour type" />
                     </SelectTrigger>
                     <SelectContent className='text-black bg-white rounded-xl'>
-                      <SelectItem value="full-time">Full-time</SelectItem>
-                      <SelectItem value="part-time">Part-time</SelectItem>
-                      <SelectItem value="contract">Contract</SelectItem>
-                      <SelectItem value="freelance">Freelance</SelectItem>
+                      <SelectItem value="full-time">Family Tour</SelectItem>
+                      <SelectItem value="part-time">Business Tour</SelectItem>
+                      <SelectItem value="contract">Friends Tour</SelectItem>
+                      <SelectItem value="freelance">Other</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -118,7 +118,7 @@ export default function JobCreate() {
 
               {/* Skills Section */}
               <div className="space-y-2">
-                <Label>Required Skills</Label>
+                <Label>Visit Loaction</Label>
                 <div className="flex flex-wrap gap-2 mb-2">
                   {skills.map((skill, index) => (
                     <motion.div
@@ -145,7 +145,7 @@ export default function JobCreate() {
                 {/* Add Skill Input */}
                 <div className="flex space-x-2">
                   <Input
-                    placeholder="Add a skill"
+                    placeholder="Locations"
                     value={newSkill}
                     onChange={(e) => setNewSkill(e.target.value)}
                     onKeyPress={(e) => {
@@ -163,8 +163,8 @@ export default function JobCreate() {
 
               {/* Job Description Section */}
               <div className="space-y-2">
-                <Label htmlFor="description">Job Description</Label>
-                <Textarea id="description" placeholder="Describe the job role, responsibilities, and requirements" rows={6} value={description} onChange={(e) => setDescription(e.target.value)} required />
+                <Label htmlFor="description">Description</Label>
+                <Textarea id="description" placeholder="Describe the facilities, accomodation, and requirements" rows={6} value={description} onChange={(e) => setDescription(e.target.value)} required />
               </div>
 
             </form>
@@ -174,7 +174,7 @@ export default function JobCreate() {
           <CardFooter className="flex justify-end space-x-4">
             <Button variant="outline">Cancel</Button>
             <Button type="submit" onClick={handleSubmit} disabled={isLoading}>
-              {isLoading ? 'Creating Job...' : 'Create Job'}
+              {isLoading ? 'Booking Tour...' : 'Book'}
             </Button>
           </CardFooter>
 

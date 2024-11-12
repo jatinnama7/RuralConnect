@@ -10,20 +10,19 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { Briefcase, DollarSign, Clock, Users, Star, ChevronRight, Plus } from 'lucide-react'
 import { Link, useParams } from 'react-router-dom'
 
-
 // Mock data for the dashboard
 const activeProjects = [
-  { id: 1, title: "E-commerce Website Redesign", freelancer: "Alice Johnson", progress: 75, dueDate: "2024-04-15" },
-  { id: 2, title: "Mobile App Development", freelancer: "Bob Smith", progress: 40, dueDate: "2024-05-20" },
-  { id: 3, title: "Content Marketing Strategy", freelancer: "Carol Williams", progress: 90, dueDate: "2024-03-31" },
-  { id: 4, title: "Web3 ", freelancer: "Rom sane ", progress: 90, dueDate: "2024-03-31" },
-  { id: 5 , title: "CMS ", freelancer: "Jatin ", progress: 90, dueDate: "2024-03-31" },
+  { id: 1, title: "Sirsa", freelancer: "Vihan", progress: 100, dueDate: "2024-04-15" },
+  { id: 2, title: "Prakasam", freelancer: "Pranav", progress: 100, dueDate: "2024-05-20" },
+  { id: 3, title: "Udupi", freelancer: "Dhruv", progress: 90, dueDate: "2024-03-31" },
+  { id: 4, title: "Prakasam", freelancer: "Ananya ", progress: 90, dueDate: "2024-03-31" },
+  { id: 5 , title: "Medak ", freelancer: "Jatin ", progress: 90, dueDate: "2024-03-31" },
 ]
 
 const recentTransactions = [
-  { id: 1, description: "Payment for E-commerce Website", amount: 2500, date: "2024-03-15" },
-  { id: 2, description: "Deposit for Mobile App Project", amount: 1000, date: "2024-03-10" },
-  { id: 3, description: "Content Marketing Monthly Fee", amount: 800, date: "2024-03-01" },
+  { id: 1, description: "Sirsa", amount: 2500, date: "2024-03-15" },
+  { id: 2, description: "Prakasam", amount: 1000, date: "2024-04-20" },
+  { id: 3, description: "Udupi", amount: 800, date: "2024-02-25" },
 ]
 
 const spendingData = [
@@ -40,13 +39,13 @@ export default function ClientDashboard() {
   const [activeTab, setActiveTab] = useState('overview')
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 p-6">
       <div className="max-w-7xl mx-auto">
         <header className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Client Dashboard</h1>
+          <h1 className="text-3xl font-bold text-gray-900">Traveler Dashboard</h1>
           <Link to={`/post-jobs/${id}`}>
           <Button>
-            <Plus className="mr-2 h-4 w-4" /> Post a New Job
+            <Plus className="mr-2 h-4 w-4" /> Book a Tour
           </Button>
           </Link>
         </header>
@@ -54,17 +53,17 @@ export default function ClientDashboard() {
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
           <TabsList>
             <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="projects">Projects</TabsTrigger>
-            <TabsTrigger value="transactions">Transactions</TabsTrigger>
-            <TabsTrigger value="freelancers">Freelancers</TabsTrigger>
+            <TabsTrigger value="projects">Tours</TabsTrigger>
+            <TabsTrigger value="transactions">Payments</TabsTrigger>
+            <TabsTrigger value="freelancers">Guides Info</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview">
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-              <StatCard icon={Briefcase} title="Active Projects" value="3" />
+              <StatCard icon={Briefcase} title="Upcoming Visits" value="6" />
               <StatCard icon={DollarSign} title="Total Spent" value="$8,300" />
-              <StatCard icon={Clock} title="Avg. Completion Time" value="14 days" />
-              <StatCard icon={Users} title="Hired Freelancers" value="5" />
+              <StatCard icon={Clock} title="Recent trip in" value="10 days" />
+              <StatCard icon={Users} title="Guides" value="10" />
             </div>
 
             <div className="grid gap-4 mt-4 md:grid-cols-2">
@@ -79,7 +78,7 @@ export default function ClientDashboard() {
                       <XAxis dataKey="month" />
                       <YAxis />
                       <Tooltip />
-                      <Bar dataKey="amount" fill="#8884d8" />
+                      <Bar dataKey="amount" fill="#10b981" />
                     </BarChart>
                   </ResponsiveContainer>
                 </CardContent>
@@ -87,7 +86,7 @@ export default function ClientDashboard() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Active Projects</CardTitle>
+                  <CardTitle>Upcoming Tours</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-10">
@@ -113,7 +112,7 @@ export default function ClientDashboard() {
           <TabsContent value="projects">
             <Card>
               <CardHeader>
-                <CardTitle>Your Projects</CardTitle>
+                <CardTitle>Your Tours</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-4">
@@ -151,7 +150,7 @@ export default function ClientDashboard() {
           <TabsContent value="freelancers">
             <Card>
               <CardHeader>
-                <CardTitle>Your Hired Freelancers</CardTitle>
+                <CardTitle>Your past Guides</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-4">
@@ -189,7 +188,7 @@ function StatCard({ icon: Icon, title, value }) {
   return (
     <Card>
       <CardContent className="flex flex-col items-center p-6">
-        <Icon className="h-8 w-8 text-indigo-600 mb-2" />
+        <Icon className="h-8 w-8 text-emerald-600 mb-2" />
         <h3 className="text-sm font-medium text-gray-500 mb-1">{title}</h3>
         <p className="text-2xl font-bold">{value}</p>
       </CardContent>
@@ -213,7 +212,7 @@ function ProjectCard({ project }) {
         <Progress value={project.progress} className="mb-2" />
         <div className="flex justify-between text-sm">
           <span>Due: {project.dueDate}</span>
-          <Link to="#" className="text-indigo-600 hover:underline">View Details</Link>
+          <Link to="#" className="text-emerald-600 hover:underline">View Details</Link>
         </div>
       </CardContent>
     </Card>
