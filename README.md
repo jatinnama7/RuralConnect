@@ -3,7 +3,13 @@
 ### Empowering Rural Economies Through FinTech based Sustainable Tourism and Blockchain-Powered Commerce
 
 ---
+## 🖼️ Project Screenshot
 
+Here’s a preview of the RuralConnect platform:
+
+![RuralConnect Screenshot](./client/assets/screenshot.png)
+
+---
 ## 🚀 Overview
 
 **RuralConnect** bridges the gap between global travelers and local guides, offering an authentic way to experience rural areas. It includes a marketplace for rural products, blockchain-secured payments, and online certification for tourism professionals. A FinTech-based solution aimed at generating employment in rural areas by connecting local guides with global travelers through a blockchain-secured platform, fostering sustainable tourism, cultural exchange, and economic empowerment
