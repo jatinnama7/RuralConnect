@@ -6,8 +6,7 @@
 ## 🖼️ Project Screenshot
 
 Here’s a preview of the RuralConnect platform:
-
-![RuralConnect Screenshot](./client/assets/screenshot.png)
+![RuralConnect Screenshot](./client/src/assets/screenshot.jpeg)
 
 ---
 ## 🚀 Overview
