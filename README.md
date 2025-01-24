@@ -116,12 +116,6 @@ Here’s a preview of the RuralConnect platform:
 
 ---
 
-## 👥 Contributors
-
-This project is maintained by [Lavinasevani] and supported by contributions from developers and tourism professionals.
-
----
-
 ## 📬 Contact
 
 For inquiries, contact us at:
