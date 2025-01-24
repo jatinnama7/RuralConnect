@@ -121,7 +121,6 @@ This project is maintained by [Lavinasevani] and supported by contributions from
 
 For inquiries, contact us at:
 
-- **Email**: [lavinasevani2432004@gmail.com](lavinasevani2432004@gmail.com)
 - **Website**: [www.RuralConnect.com](https://www.RuralConnect.com)
 
 ---
